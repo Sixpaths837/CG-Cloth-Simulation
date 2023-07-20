@@ -26,7 +26,7 @@ The **Mass – Spring Damper Model** works by assuming the cloth to be a connect
  2. **Shear springs:** Handle shear stresses and are connected diagonally.
  3. **Bend springs:** Handle bending stresses and are connected vertically and horizontally to every other particle
 
-![Cloth Simulation Springs](https://www.researchgate.net/profile/Min-Sang-Kim/publication/327513476/figure/fig1/AS:677014595981315@1538424266958/Three-types-of-basic-springs-for-cloth-simulation.png)
+![Cloth Simulation Springs](images/Three-types-of-basic-springs-for-cloth-simulation.png)
 
 <h3>Equations Involved</h3>
 
@@ -63,23 +63,23 @@ These equations allow us to recompute our values after $dt$ time interval has pa
 
 ## Outputs and Comments
 
-![Only Shear Springs](https://raw.githubusercontent.com/rocka0/CG-Cloth-Simulation/main/images/running1.png)
+![Only Shear Springs](images/running1.png)
 
 This is a photo of our cloth simulation with just **shear springs**
 
-![Shear and Bend](https://raw.githubusercontent.com/rocka0/CG-Cloth-Simulation/main/images/running2.png)
+![Shear and Bend](images/running2.png)
 
 ## The Jakobsen Constraint Relaxation
 
 We noticed that the cloth appears to be far smoother than it should be and the reason for that was the incorrect management of constraints regarding the length of the springs.
 
-![Without Jakobsen](https://raw.githubusercontent.com/rocka0/CG-Cloth-Simulation/main/images/withoutJakobsen.png)
+![Without Jakobsen](images/withoutJakobsen.png)
 
 Notice that without applying the Jakobsen method, the cloth seems to sag far too much. This is because the cloth was originally having spring rest length of $1$ but after applying the particle dynamics, it shifted to $\gt 1$.
 
 Applying the Jakobsen method allows us to manage the constraints after the particle dynamics has kicked in, so that the mesh stays more or less intact. The resulting cloth is more accurate:
 
-![With Jakobsen](https://raw.githubusercontent.com/rocka0/CG-Cloth-Simulation/main/images/withJakobsen.png)
+![With Jakobsen](images/withJakobsen.png)
 
 # References
 
